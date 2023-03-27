@@ -36,11 +36,10 @@ public class Matching {
     public LinkedHashMap<Record, Double> getSortedRecordRatio() {
         LinkedHashMap<Record, Double> collect = recordRatio.entrySet()
                 .stream()
-                .sorted(Map.Entry.comparingByValue())
+                .sorted(Map.Entry.<Record, Double>comparingByValue().reversed())
                 .collect(Collectors.toMap(
                         Map.Entry::getKey, Map.Entry::getValue,
                         (e1, e2) -> e1, LinkedHashMap::new));
         return collect;
     }
-
 }

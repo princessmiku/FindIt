@@ -26,6 +26,7 @@ public class SearchEngine {
      * @return eine Klasse mit allen gefundenen ergebnissen und ihrer wichtigkeit
      */
     public Matching search(String query) {
+        query = query.strip().toLowerCase();
         String[] phrases = getPhrasesFromQuery(query);
         Matching matching = new Matching();
         for (Record record: records) {
