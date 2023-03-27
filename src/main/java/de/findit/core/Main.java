@@ -1,7 +1,9 @@
 package de.findit.core;
 
+import de.findit.fileds.TitleField;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        SearchEngine engine = new SearchEngine();
     }
 }
